@@ -16,7 +16,7 @@ Mini Twitter
 * [x]The user should be able to "Like". When "Like" is clicked, the text should change to "Unlike". When "Unlike" is clicked, the text should change to "Like". Alternatively, use a heart icon (colored or not colored).
 * [ ]When a "Liked" tweet is retweeted, the new tweet should not be liked.
 * [ ]Each tweet has an optional hashtag. The hashtag should be linked with an anchor tag.
-* [ ]The user should be able to delete a tweet.
+* [x]The user should be able to delete a tweet.
 ## Optional Stories
 * [ ]Download and upload the list of tweets using the myjson api, as shown in class.
 * [ ]Users can mention other users. Any string that starts with @username will be highlighted in blue.

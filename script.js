@@ -15,15 +15,9 @@ const addNewTweet = () => {
 }
 
 const updateTweetFeed = () => {
-    let html = '',
-        textnode, node
-    tweetFeed.map(({
-        isLiked,
-        text
-    }, i) => {
-        textnode = `<li>${text}<a href="#" onclick="reTweet(${i})">Retweet</a>
-    <a href="#" onclick="toggleLike(${i})">${tweetFeed[i].isLiked ? "unlike" : "like"}</a><a href="#" onclick="removeItem(${i})">Remove</a>
-    </li>`
+    let html = '', textnode, node
+    tweetFeed.map(({isLiked, text}, i) => {
+        textnode = `<li>${text}<a href="#" onclick="reTweet(${i})">Retweet</a><a href="#" onclick="toggleLike(${i})">${tweetFeed[i].isLiked ? "unlike" : "like"}</a><a href="#" onclick="removeItem(${i})">Remove</a></li>`
         node = html += textnode
         document.getElementById('tweetFeed').innerHTML = node
         inputTweet.value = ''

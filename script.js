@@ -13,9 +13,12 @@ const addNewTweet = () => {
         formerTweeted: false,
         hashtag: []
     }
+
     getHashtagFromInput(newTweet.text)
-    newTweet.hashtag.concat(inputHashtag)
+    newTweet.hashtag = newTweet.hashtag.concat(inputHashtag)
     tweetFeed.push(newTweet)
+    console.log(newTweet.hashtag)
+    
 }
 
 const updateTweetFeed = () => {
@@ -27,10 +30,7 @@ const updateTweetFeed = () => {
         <a href="#" onclick="toggleLike(${i})">${tweetFeed[i].isLiked ? "unlike" : "like"}</a>
         <a href="#" onclick="removeItem(${i})">Remove</a>
         <ul>Hashtag:
-        <li><a href="#"><input type="checkbox">#adopt<br></a></li>
-        <li><a href="#"><input type="checkbox">#improvise<br></a></li>
-        <li><a href="#"><input type="checkbox">#overcum<br></a></li>
-        <li><a href="#"><input type="checkbox">#heyaheya<br></a></li>
+        <a href="#" id="${tweetFeed.hashtag}" >${tweetFeed[i].hashtag}</a><br>
         </ul></li>`
         node = html += textnode
         document.getElementById('tweetFeed').innerHTML = node
@@ -65,7 +65,7 @@ function getHashtagFromInput(searchText) {
     if (inputHashtag) {
         // console.log(inputHashtag);
     } else {
-        return false;
+        console.log("getHashtagFromInput false");
     }
 }
 

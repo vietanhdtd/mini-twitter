@@ -4,6 +4,9 @@ Created with effort by: Huynh Hoang Vy && Nguyen Viet Anh
 
 Mini Twitter 
 
+## View as
+
+https://mini-twitter-group-project.netlify.com/
 
 ## Required User Stories
 

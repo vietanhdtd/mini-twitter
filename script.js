@@ -87,8 +87,6 @@ function countHashtag(original) {
 
 const formatText = (text) => {
     formattedText = text.split(" ");
-    console.log(formattedText);
-
     for (let i = 0; i < formattedText.length; i++) {
         if (formattedText[i].match(/\B\#\w\w+\b/g) !== null) {
             formattedText[i] = `<a href='#'>${formattedText[i]}</a>`
@@ -98,10 +96,6 @@ const formatText = (text) => {
     }
     return formattedText = formattedText.join(" ");
 }
-
-// const displayRemainingCharacter = () => {
-//     document.getElementById('remainingCharacter').innerHTML = 140 - inputTweet.value.length;
-// }
 
 const displayRemainingCharacter = () => {
     document.getElementById('remainingCharacter').innerHTML = (140 - inputTweet.value.length) + "/140"

@@ -1,5 +1,4 @@
 ## Required User Stories
-
 [x]The user should be able to enter a message into a text field.
 [x]The user should be able to press "Tweet" and see the message pop in below the text box.
 [x]The user should see a "count" that displays how many more characters the user has remaining, counting down from 140.
@@ -16,5 +15,3 @@
 [ ]The user can click on a hashtag, and only other tweets with that hashtag are shown.
 [ ]When the user deletes a tweet, all retweets should be deleted.
 [ ]Any tweet with an image URL will have the image automatically expanded in the tweet.
-
-

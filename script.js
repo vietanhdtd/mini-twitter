@@ -112,28 +112,6 @@ const renderTweetFeed = () => {
     updateTweetFeed();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.getElementById('inputTweet').addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
         event.preventDefault();

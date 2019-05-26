@@ -19,24 +19,50 @@
     <title>Document</title>
 </head>
 
-<body>
-    
-    <div>
-        <h1>Twitter</h1>
-    </div>
-    <div class="d-flex align-items-center h-100 col">
-        <input class="form-control w-25" type="text" placeholder="Default input" maxlength="140" id="inputTweet"
-            oninput="displayRemainingCharacter()">
-        <button type="button" class="btn btn-primary" id="tweetBtn" onclick="renderTweetFeed()">Tweet</button>
-    </div>
-    <p id="remainingCharacter"></p>
-    <div>
-        <ul id="tweetFeed">
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white"
+        style="border-bottom: 1px solid rgb(155, 155, 155); box-shadow: 5px 5px 10px lightgrey;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Home</a>
 
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container">
+        <div>
+            <h1>Twitter</h1>
+        </div>
+        <div class="d-flex align-items-center h-100 col">
+            <input class="form-control w-25" type="text" placeholder="Default input" maxlength="140" id="inputTweet"
+                oninput="displayRemainingCharacter()">
+            <button type="button" class="btn btn-primary" id="tweetBtn" onclick="renderTweetFeed()">Tweet</button>
+        </div>
+        <small id="remainingCharacter"></small>
+        <div>
+            <ul id="tweetFeed" style="list-style-type:none;">
+            </ul>
+        </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 
 </html>
+<!-- <img src="img/tweet-img.jpg" class="card-img-top" alt="pepe the frog"> -->

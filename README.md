@@ -19,7 +19,7 @@ Mini Twitter
 * [x]The user should be able to delete a tweet.
 ## Optional Stories
 * [ ]Download and upload the list of tweets using the myjson api, as shown in class.
-* [ ]Users can mention other users. Any string that starts with @username will be highlighted in blue.
+* [x]Users can mention other users. Any string that starts with @username will be highlighted in blue.
 * [ ]The user can click on a hashtag, and only other tweets with that hashtag are shown.
 * [ ]When the user deletes a tweet, all retweets should be deleted.
 * [ ]Any tweet with an image URL will have the image automatically expanded in the tweet.

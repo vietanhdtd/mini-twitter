@@ -17,13 +17,14 @@ const addNewTweet = () => {
             createAt: new Date(),
         }]
     }
-    tweetFeed.push(newTweet)
+    tweetFeed.unshift(newTweet)
 }
 
 
 const updateTweetFeed = () => {
     let html = '',
         textnode, node
+    tweetFeed.sort()
     tweetFeed.map(({
         reTweets,
         text
@@ -41,7 +42,6 @@ const updateTweetFeed = () => {
                 <li>${text}<a href="#" onclick="toggleLikeReTweet(${i})">${reTweets.isLiked ? "unlike" : "like"}</a></li>
             </ul>
          </div>
-         <img src="img/tweet-img.jpg" class="card-img-top" alt="pepe the frog">
     </div>
     </li>`
         node = html += textnode

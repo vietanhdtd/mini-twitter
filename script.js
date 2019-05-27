@@ -1,5 +1,6 @@
 
 let tweetFeed = [];
+let formattedText;
 
 const inputTweet = document.getElementById('inputTweet')
 
@@ -8,8 +9,9 @@ const addNewTweet = () => {
     const newTweet = {
         isLiked: false,
         text: inputTweet.value,
-        author: '',
+        author: "",
         createAt: new Date(),
+        hashtag: [],
         reTweets: [{
             isRetweeted: false,
             isLiked: false,
@@ -18,9 +20,10 @@ const addNewTweet = () => {
             createAt: new Date(),
         }]
     }
-    tweetFeed.unshift(newTweet)
+    formatText(newTweet.text);
+    newTweet.text = formattedText;
+    tweetFeed.unshift(newTweet);
 }
-
 
 const updateTweetFeed = () => {
     let html = '',
@@ -72,6 +75,11 @@ const updateTweetFeed = () => {
     })
 }
 
+// const reTweet = i => {
+//     tweetFeed.splice(i + 1, 0, tweetFeed[i])
+//     updateTweetFeed()
+// }
+
 const reTweetToggle = idx => {
     tweetFeed[idx].reTweets.isRetweeted = !tweetFeed[idx].reTweets.isRetweeted
     updateTweetFeed()
@@ -82,8 +90,8 @@ const toggleLikeReTweet = idx => {
     updateTweetFeed()
 }
 
-const toggleLike = (idx) => {
-    tweetFeed[idx].isLiked = !tweetFeed[idx].isLiked;
+const toggleLike = i => {
+    tweetFeed[i].isLiked = !tweetFeed[i].isLiked;
     updateTweetFeed()
 }
 
@@ -92,16 +100,36 @@ const deleteTweet = idx => {
     updateTweetFeed()
 }
 
+const removeItem = i => {
+    tweetFeed.splice(i, 1);
+    updateTweetFeed();
+}
+
+// count hashtag
+function countHashtag(original) {
+    return array.reduce((countsMap, item) => countsMap.set(item, countsMap.get(item) + 1 || 1), new Map())
+}
+
+const formatText = (text) => {
+    formattedText = text.split(" ");
+    for (let i = 0; i < formattedText.length; i++) {
+        if (formattedText[i].match(/\B\#\w\w+\b/g) !== null) {
+            formattedText[i] = `<a href='#'>${formattedText[i]}</a>`
+        } else if (formattedText[i].match(/\B\@\w\w+\b/g) !== null) {
+            formattedText[i] = `<a href='#'>${formattedText[i]}</a>`
+        }
+    }
+    return formattedText = formattedText.join(" ");
+}
+
 const displayRemainingCharacter = () => {
     document.getElementById('remainingCharacter').innerHTML = (140 - inputTweet.value.length) + "/140"
 }
 
-
 const renderTweetFeed = () => {
-    addNewTweet()
-    updateTweetFeed()
+    addNewTweet();
+    updateTweetFeed();
 }
-
 
 document.getElementById('inputTweet').addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
